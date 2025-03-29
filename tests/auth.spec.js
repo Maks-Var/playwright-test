@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test.beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page}) => {
     await page.goto('http://91.197.96.80/');
   });
 
@@ -46,5 +46,8 @@ test.beforeEach(async ({ page }) => {
     await page.getByRole('button', { name: 'Войти' }).click();
   });
 
+  test.afterEach(async ({ page}) => {
+    await page.close();
+  });
 
 
