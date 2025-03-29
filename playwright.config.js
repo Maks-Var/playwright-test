@@ -24,6 +24,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
   },
 
   /* Configure projects for major browsers */
@@ -36,7 +37,7 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
        },
-       //dependencies: ['setup'],
+       dependencies: ['setup'],
     },
 
     {
@@ -45,7 +46,7 @@ export default defineConfig({
         ...devices['Desktop Firefox'],
         storageState: 'playwright/.auth/user.json',
        },
-       //dependencies: ['setup'],
+       dependencies: ['setup'],
     },
 
     {
@@ -54,7 +55,7 @@ export default defineConfig({
         ...devices['Desktop Safari'],
         storageState: 'playwright/.auth/user.json',
       },
-      //dependencies: ['setup'],
+      dependencies: ['setup'],
     },
   ],
 });
